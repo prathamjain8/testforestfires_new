@@ -9,7 +9,6 @@ app = application
 
 
 ## Import Ridge Regressor and StandardScaler pickle files
-
 ridge_model = pickle.load(open('models/ridge.pkl', 'rb'))
 standard_scaler = pickle.load(open('models/scaler.pkl', 'rb'))
 
@@ -39,8 +38,6 @@ def predict_datapoint():
         result = ridge_model.predict(new_data_scaled)
 
         return render_template('home.html', results = result[0])
-
-
     else:
         return render_template('home.html')
 
